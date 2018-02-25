@@ -5,6 +5,7 @@ Jacob Bracken
 
 Written for BBC Grad Scheme 2018
 Implimentation of Conways Game of life
+Python V2.7.14
 '''
 
 import random
@@ -30,10 +31,13 @@ class GameBoard:
             print " {0} ".format(line_output)
         print('\n\n\n')
 
+    #Returns the number of alive neighbours given a coordinate
     def get_neighbours(self, x_coord, y_coord):
         neighbors = 0
+	#Searches all locations adjacent to the given cell
         for i in [-1,0,1]:
             for j in [-1,0,1]:
+		#If a legal cell (within the bounds of the board)
                 if (0 <= (x_coord + i) < len(self.game_board) and 0 <= (y_coord + j) < len(self.game_board[i])):
                     if not (x_coord + i == x_coord and y_coord + j == y_coord):
                         if self.game_board[x_coord + i][y_coord + j] == self.aliveToken:
@@ -78,7 +82,8 @@ def main():
 
     #For all evolutions/itterations
     for i in range(1, int(itterations)+1):
-        game_board.update_board()
+        print("Evolution: {0}".format(i))
+	game_board.update_board()
         game_board.print_state()
         #pauses for two seconds to prevent flood of information to the terminal
         time.sleep(2)
