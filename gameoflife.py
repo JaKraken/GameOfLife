@@ -6,6 +6,11 @@ Jacob Bracken
 Written for BBC Grad Scheme 2018
 Implimentation of Conways Game of life
 Python V2.7.14
+
+Assumptions of the problem:
+	-User can input the size and the number of itterations of the game
+	-Board is randomly generated (possibility to extend to user inputted game boards)
+	-User wants to see each itteration/evolution
 '''
 
 import random
